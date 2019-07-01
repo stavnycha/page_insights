@@ -5,8 +5,14 @@ module Api
       def create
         insight = PageInsight.new(page_insights_params)
         
-        if insight.save
-          render json: insight, root: false, status: 201
+        if insight.valid?
+          insight.process!
+
+          if insight.save
+            render json: insight, root: false, status: 201
+          else
+            render json: { errors: insight.errors.messages }, status: 422
+          end
         else
           render json: { errors: insight.errors.messages }, status: 422
         end
