@@ -41,9 +41,6 @@ gem 'slim'
 # for settings
 gem 'recursive-open-struct'
 
-# async mailers
-gem 'sidekiq'
-
 gem 'validate_url'
 
 group :development, :test do
