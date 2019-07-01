@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  errors:
+    exception: something went wrong
+    not_found: action not found
+    required: must be present
+

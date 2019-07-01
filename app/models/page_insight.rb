@@ -7,4 +7,6 @@ class PageInsight < ApplicationRecord
             :max_ttfp,
             presence: true,
             numericality: { greater_than: 0 }
+
+  scope :ordered, -> { order(:created_at) }
 end
