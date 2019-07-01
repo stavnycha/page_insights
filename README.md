@@ -2,11 +2,11 @@
 
 Application proxying to Google Page Insights and returning necessary output via API.
 
-* Ruby version
+### Ruby version
 
 ruby-2.5.1
 
-* API call
+### API call
 
 ```
 /api/v1/tests?url=(url)&...
