@@ -9,4 +9,12 @@ class PageInsight < ApplicationRecord
             numericality: { greater_than: 0 }
 
   scope :ordered, -> { order(:created_at) }
+
+  delegate :process!, to: :processor
+
+  private
+
+  def processor
+    @processor ||= PageInsights::Processor.new(self)
+  end
 end
