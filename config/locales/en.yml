@@ -31,6 +31,9 @@
 
 en:
   hello: "Hello world"
+  user_mailer:
+    notify_failed_test:
+      subject: Test has failed
   errors:
     exception: something went wrong
     not_found: action not found

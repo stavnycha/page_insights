@@ -9,6 +9,8 @@ class PageInsight < ApplicationRecord
             numericality: { greater_than: 0 }
 
   scope :ordered, -> { order(:created_at) }
+  
+  after_commit :notify, on: [:update]
 
   delegate :process!, to: :processor
 
@@ -16,5 +18,9 @@ class PageInsight < ApplicationRecord
 
   def processor
     @processor ||= PageInsights::Processor.new(self)
+  end
+
+  def notify
+    UserMailer.notify_failed_test(id).deliver_later if passed == false
   end
 end

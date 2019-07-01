@@ -1,0 +1,31 @@
+h1
+  | Following test for page&nbsp;
+  strong= @insight.url
+  | &nbsp;has failed:
+
+table
+  thead
+    tr
+      th Key
+      th Actual
+      th Max
+  tbody
+    tr
+      td TTFB
+      td= @insight.ttfb
+      td= @insight.max_ttfb
+    tr
+      td TTI
+      td= @insight.tti
+      td= @insight.max_tti
+    tr
+      td Speed Index
+      td= @insight.speed_index
+      td= @insight.max_speed_index
+    tr
+      td TTFP
+      td= @insight.ttfp
+      td= @insight.max_ttfp
+
+| Result: 
+= @insight.passed? ? "Passed" : "Not passed"
