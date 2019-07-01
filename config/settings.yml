@@ -1,0 +1,16 @@
+base: &base
+  page_insights_url: https://www.googleapis.com/pagespeedonline/v5/runPagespeed
+  page_insights_api_token: <%= ENV["PAGE_INSIGHTS_API_TOKEN"] %>
+  mailer:
+    sender: from@email.com
+    recipient: to@email.com
+
+development:
+  <<: *base
+  page_insights_api_token: AIzaSyDrxlig1VnBcTEXmvsGlBBi356yyI67wXw
+
+production:
+  <<: *base
+
+test:
+  <<: *base
