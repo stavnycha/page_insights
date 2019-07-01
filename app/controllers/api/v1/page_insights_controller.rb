@@ -1,7 +1,6 @@
 module Api
   module V1
     class PageInsightsController < ApplicationController
-      
       def create
         insight = PageInsight.new(page_insights_params)
         
