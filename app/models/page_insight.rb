@@ -1,5 +1,5 @@
 class PageInsight < ApplicationRecord
-  validates :url, presence: true
+  validates :url, presence: true, url: true
 
   validates :max_ttfb,
             :max_tti,

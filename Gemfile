@@ -27,8 +27,24 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # serializers`
 gem 'active_model_serializers'
 
+# rest client for external requests
+gem 'rest-client', require: false
+
+# scheduled jobs
+gem 'whenever'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
+# templating for emails
+gem 'slim'
+
+# for settings
+gem 'recursive-open-struct'
+
+# async mailers
+gem 'sidekiq'
+
+gem 'validate_url'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
